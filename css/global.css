@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Iosevka+Charon+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #702222;
+}
+
+h1, h2, h3, p, span, button {
+    color: white;
+    font-family: 'Iosevka Charon Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Loading Screen */
+
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Iosevka Charon Mono', monospace;
+  background: #702222;
+  color: white;
+  z-index: 1000;
+  transition: opacity 0.8s ease;
+  font-size: 60px;
+}
+
+#loading-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* menu.js */
+
+.title {
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 8rem;
+  margin-top: 8rem;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu-item img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.menu-item:hover img {
+  transform: scale(1.05);
+}
+
+.menu-item span {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  font-weight: 300;
+  color: white;
+}
+
+/* pages */
+
+.page {
+  padding: 2rem;
+}
+
+.page h1 {
+  font-size: 4rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.back-btn {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: none;
+  border: none;
+  text-decoration: underline;
+  color: white;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.page-header {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+/* projects.js */
+
+.projects-page {
+  min-height: 100vh;
+  padding: 2.5rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  border: 2px solid white;
+  padding: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 1.8rem;
+}
+
+.project-card img {
+  width: 85%;
+  height: 170px;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
+.project-card p {
+  font-size: 1.45rem;
+  line-height: 1.35;
+}
+
+.github-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.github-links img {
+  width: 40px;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.github-links img:hover {
+  transform: scale(1.1);
+}
+
+/* cv.js + skillset.js */
+
+.cv-page {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.cv-header {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+.headshot {
+  width: 500px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cv-contact {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+.cv-link {
+  display: inline-block;
+  margin-top: 2rem;
+  color: white;
+}
+
+.cv-sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  padding-bottom: 2rem;
+}
+
+.timeline-section {
+  border: 2px solid white;
+  padding: 2rem;
+  height: 100%;
+}
+
+.timeline-section h2 {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.year {
+  text-align: right;
+  font-size: 1.8rem;
+}
+
+.timeline-content h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+  font-size: 1.6rem;
+  color: #D9D9D9;
+}
+
+/* media sizing */
+
+@media (max-width: 900px) {
+  #loading-screen {
+    font-size: 2rem;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 3rem;
+    padding: 2rem 1rem 0;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 4rem;
+    align-items: center;
+  }
+
+  .menu-item img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .menu-item span {
+    font-size: 1.7rem;
+  }
+
+  .projects-page {
+    padding: 1.5rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .project-card p {
+    font-size: 1.2rem;
+  }
+
+  .cv-page {
+    padding: 1.5rem;
+  }
+
+  .cv-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .headshot {
+    width: 220px;
+  }
+
+  .cv-contact {
+    font-size: 1.2rem;
+  }
+
+  .cv-sections {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-section h2 {
+    font-size: 2rem;
+  }
+
+  .timeline-item {
+    grid-template-columns: 2fr 3fr;
+    gap: 0.5rem;
+    text-align: left;
+  }
+
+  .year {
+    text-align: left;
+    font-size: 1rem;
+  }
+
+  .timeline-content h3 {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .timeline-content p {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .back-btn {
+    font-size: 1rem;
+  }
+}
