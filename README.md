@@ -1,4 +1,4 @@
-# Portfolio
+Portfolio
     My current portfolio of Front-end projects, CV and skills learnt the past year of my Noroff studies.
 
 
